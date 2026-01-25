@@ -130,8 +130,61 @@ const App: React.FC = () => {
         </div>
       </div>
 
+      {/* ================= HERO ================= */}
+      <section className="pt-40 pb-24 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl font-extrabold mb-6">
+            Content banana nahi, <br />
+            <span className="text-indigo-400">System banana chahiye.</span>
+          </h1>
+
+          <p className="text-slate-400 mb-10">
+            Done-for-you Instagram + YouTube automation.  
+            Start at just ₹399/month.
+          </p>
+
+          <OnboardingMeter />
+        </div>
+      </section>
+
+      {/* ================= HOW IT WORKS ================= */}
+      <section id="how-it-works" className="py-24 border-t border-slate-800">
+        <div className="max-w-6xl mx-auto text-center mb-12">
+          <h2 className="text-4xl font-bold">How It Works</h2>
+        </div>
+
+        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {[
+            { icon: <ShieldCheck />, title: "Choose Niche" },
+            { icon: <Video />, title: "We Generate Content" },
+            { icon: <CheckCircle />, title: "We Post Automatically" },
+            { icon: <Calendar />, title: "Daily Growth" },
+          ].map((item, i) => (
+            <div key={i} className="bg-slate-900 p-6 rounded-xl border border-slate-800">
+              <div className="text-indigo-400 mb-3">{item.icon}</div>
+              <h3 className="font-bold">{item.title}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= PROOF ================= */}
+      <section id="proof" className="py-24 bg-slate-900 border-y border-slate-800">
+        <div className="max-w-6xl mx-auto text-center mb-10">
+          <h2 className="text-4xl font-bold">Examples</h2>
+        </div>
+        <NichePicker />
+      </section>
+
+      {/* ================= CALCULATOR ================= */}
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto">
+          <ConsistencyCalculator />
+        </div>
+      </section>
+
       {/* ================= PRICING ================= */}
-      <section id="pricing" className="pt-40 pb-24 px-4">
+      <section id="pricing" className="py-24 px-4 border-t border-slate-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">
             Simple Pricing. Real Automation.
@@ -175,6 +228,32 @@ const App: React.FC = () => {
                 >
                   {tier.cta}
                 </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FAQ ================= */}
+      <section className="py-24">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-10">FAQ</h2>
+
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border border-slate-800 rounded-xl bg-slate-900">
+                <button
+                  onClick={() => toggleFaq(i)}
+                  className="w-full flex justify-between p-6 text-left"
+                >
+                  <span className="font-semibold">{faq.question}</span>
+                  <ChevronDown
+                    className={`transition ${activeFaq === i ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {activeFaq === i && (
+                  <div className="px-6 pb-6 text-slate-400">{faq.answer}</div>
+                )}
               </div>
             ))}
           </div>
