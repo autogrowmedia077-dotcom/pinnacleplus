@@ -17,10 +17,10 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap justify-center space-x-6 mb-6 text-sm">
-            <a href="#" className="text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-slate-500 hover:text-white transition-colors">Terms & Conditions</a>
-            <a href="#" className="text-slate-500 hover:text-white transition-colors">Returns Policy</a>
-            <a href="#" className="text-slate-500 hover:text-white transition-colors">About Us</a>
+            <a href="/privacy-policy" className="text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms-conditions" className="text-slate-500 hover:text-white transition-colors">Terms & Conditions</a>
+            <a href="/returns-policy" className="text-slate-500 hover:text-white transition-colors">Returns Policy</a>
+            <a href="/about-us" className="text-slate-500 hover:text-white transition-colors">About Us</a>
           </div>
 
           <div className="text-slate-600 text-sm mb-10">

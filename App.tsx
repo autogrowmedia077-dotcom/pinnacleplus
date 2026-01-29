@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import {
   Play,
   CheckCircle,
   Menu,
@@ -25,17 +30,19 @@ import { Simulator } from "./components/Simulator";
 import { NichePicker } from "./components/NichePicker";
 import { OnboardingMeter } from "./components/OnboardingMeter";
 import { CountdownTimer } from './components/CountdownTimer';
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
+import { TermsConditions } from "./components/TermsConditions";
+import { ReturnsPolicy } from "./components/ReturnsPolicy";
+import { AboutUs } from "./components/AboutUs";
 import { FaqItem, PricingTier } from "./types";
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
-
-  /* ================= PRICING DATA ================= */
   const pricingTiers: PricingTier[] = [
     {
       name: "Starter",
@@ -79,7 +86,6 @@ const App: React.FC = () => {
     },
   ];
 
-  /* ================= FAQ DATA ================= */
   const faqs: FaqItem[] = [
     {
       question: "Is it fully automated?",
@@ -100,9 +106,7 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 overflow-x-hidden font-sans selection:bg-indigo-500/30">
-      
-      {/* ================= TOP BAR ================= */}
+    <>
       <div className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -138,7 +142,6 @@ const App: React.FC = () => {
       </div>
 
       <main>
-        {/* ================= HERO ================= */}
         <section className="pt-40 pb-24 text-center px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white leading-tight">
@@ -154,14 +157,12 @@ const App: React.FC = () => {
         </section>
 
         <div className="space-y-24 pb-20">
-          {/* ================= SIMULATOR ================= */}
           <section className="px-4 -mt-10 relative z-20">
             <div className="max-w-4xl mx-auto">
                <Simulator />
             </div>
           </section>
 
-          {/* ================= HOW IT WORKS ================= */}
           <section id="how-it-works" className="py-12">
             <div className="max-w-6xl mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">How It Works</h2>
@@ -181,7 +182,6 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* ================= CONSISTENCY GAP ================= */}
           <section className="max-w-7xl mx-auto px-4">
              <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="order-2 md:order-1">
@@ -202,7 +202,6 @@ const App: React.FC = () => {
              </div>
           </section>
 
-          {/* ================= PROOF/NICHE PICKER ================= */}
           <section id="proof" className="bg-slate-900/50 py-16 border-y border-white/5 px-4">
             <div className="max-w-7xl mx-auto">
                <div className="text-center mb-12">
@@ -216,7 +215,6 @@ const App: React.FC = () => {
           <Features />
           <CountdownTimer />
 
-          {/* ================= PRICING ================= */}
           <section id="pricing" className="py-24 px-4 border-t border-slate-800">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Simple Pricing. Real Automation.</h2>
@@ -244,7 +242,6 @@ const App: React.FC = () => {
 
           <Testimonials />
 
-          {/* ================= FAQ ================= */}
           <section className="py-24 px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-white">Frequently Asked Questions</h2>
@@ -262,7 +259,6 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* ================= FINAL CTA ================= */}
           <section className="px-4 pb-20">
             <div className="max-w-4xl mx-auto text-center rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-indigo-950 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 blur-[100px] rounded-full pointer-events-none"></div>
@@ -287,10 +283,25 @@ const App: React.FC = () => {
           </section>
         </div>
       </main>
+    </>
+  );
+};
 
-      <Footer />
-      <PurchaseNotification />
-    </div>
+const App: React.FC = () => {
+  return (
+    <Router>
+      <div className="min-h-screen bg-slate-950 text-slate-200 overflow-x-hidden font-sans selection:bg-indigo-500/30">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/returns-policy" element={<ReturnsPolicy />} />
+          <Route path="/about-us" element={<AboutUs />} />
+        </Routes>
+        <Footer />
+        <PurchaseNotification />
+      </div>
+    </Router>
   );
 };
 
