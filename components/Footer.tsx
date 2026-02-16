@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Youtube, Twitter, Linkedin, MapPin, Store } from 'lucide-react';
+import { Instagram, Youtube, Twitter, Linkedin, MapPin, Store, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -45,7 +45,16 @@ export const Footer: React.FC = () => {
                 <div className="flex items-center sm:justify-center space-x-2">
                    <span>📮 482001</span>
                 </div>
+                <div className="flex items-center sm:justify-center space-x-2">
+                  <Mail size={16} className="text-indigo-400" />
+                  <span>auto.grow.media077@gmail.com</span>
+                </div>
               </div>
+
+              <div className="text-sm text-slate-400 mt-4">
+                If you have any problems or queries, mail us at <a href="mailto:auto.grow.media077@gmail.com" className="text-indigo-400 hover:text-indigo-300">auto.grow.media077@gmail.com</a>
+              </div>
+
               <div className="text-xs text-slate-600 mt-4">Established business expanding into digital services</div>
             </div>
           </div>
