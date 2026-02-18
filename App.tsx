@@ -55,7 +55,7 @@ const Home: React.FC = () => {
         "Generated Captions & Tags",
       ],
       cta: "Start Starter Plan",
-      payuLink: "https://u.payu.in/BrUiQYLkFlAq",
+      payuLink: "https://payments.cashfree.com/forms/pinnaclepluspro",
     },
     {
       name: "Pro",
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
       ],
       highlight: true,
       cta: "Get Pro Growth",
-      payuLink: "https://u.payu.in/dr3pzGHmOdX4",
+      payuLink: "https://payments.cashfree.com/forms/pinnaclepluspro",
     },
     {
       name: "Business",
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
         "Watermark Removal",
       ],
       cta: "Scale Business",
-      payuLink: "https://u.payu.in/HJh89xerzBHD",
+      payuLink: "https://payments.cashfree.com/forms/pinnacleplusbusiness",
     },
   ];
 
