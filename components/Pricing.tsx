@@ -15,7 +15,8 @@ const tiers: PricingTier[] = [
       "Basic Instagram Guide",
       "Bonuses Worth ₹5,000"
     ],
-    cta: "Get Starter Pack"
+    cta: "Get Starter Pack",
+    payuLink: "https://payments.cashfree.com/forms/pinnaclepluspro"
   },
   {
     name: "Growth Bundle",
@@ -30,7 +31,8 @@ const tiers: PricingTier[] = [
       "Priority Email Support",
       "Bonuses Worth ₹15,000"
     ],
-    cta: "Get Growth Bundle"
+    cta: "Get Growth Bundle",
+    payuLink: "https://payments.cashfree.com/forms/pinnaclepluspro"
   },
   {
     name: "Ultimate Empire",
@@ -46,7 +48,8 @@ const tiers: PricingTier[] = [
       "24/7 WhatsApp Support",
       "Bonuses Worth ₹25,000"
     ],
-    cta: "Get Ultimate Empire"
+    cta: "Get Ultimate Empire",
+    payuLink: "https://payments.cashfree.com/forms/pinnacleplusbusiness"
   }
 ];
 
@@ -108,13 +111,13 @@ export const Pricing: React.FC = () => {
                 ))}
               </div>
 
-              <button className={`w-full py-4 rounded-xl font-bold text-sm transition-all duration-300 ${
+              <a href={tier.payuLink} className={`block text-center w-full py-4 rounded-xl font-bold text-sm transition-all duration-300 ${
                 index === 1 
                   ? 'gradient-primary text-white shadow-lg hover:shadow-indigo-500/50 hover:scale-105' 
                   : 'bg-white/10 text-white hover:bg-white/20 hover:scale-105'
               }`}>
                 {tier.cta}
-              </button>
+              </a>
               
               <div className="mt-4 text-center">
                  <span className="text-[10px] text-slate-500 uppercase tracking-widest">Instant Access via Email</span>

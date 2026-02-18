@@ -1,6 +1,7 @@
 export interface PricingTier {
   name: string;
   price: string;
+  originalPrice: string;
   features: string[];
   cta: string;
   payuLink: string;
