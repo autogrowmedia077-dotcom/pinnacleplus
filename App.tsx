@@ -55,7 +55,7 @@ const Home: React.FC = () => {
         "Generated Captions & Tags",
       ],
       cta: "Start Starter Plan",
-      payuLink: "https://payments.cashfree.com/forms/pinnaclepluspro",
+      payuLink: "https://payments.cashfree.com/forms/pinnacleplustarter",
     },
     {
       name: "Pro",
